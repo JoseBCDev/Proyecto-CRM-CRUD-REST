@@ -1,0 +1,23 @@
+{
+  "name": "proyecto-crm-crud-rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "json-server --watch db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseBCDev/Proyecto-CRM-CRUD-REST.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoseBCDev/Proyecto-CRM-CRUD-REST/issues"
+  },
+  "homepage": "https://github.com/JoseBCDev/Proyecto-CRM-CRUD-REST#readme",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}
