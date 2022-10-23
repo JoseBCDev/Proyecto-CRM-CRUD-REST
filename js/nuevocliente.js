@@ -1,3 +1,4 @@
+import { mostrarAlerta } from "./funciones.js";
 
 //Funcion ifi (permite que se mantengan las variables y funciones)
 (function(){
@@ -29,7 +30,7 @@
         //Validamos si estan vacios o no los inputs
         if(!validarCampos(cliente))
         {
-            console.log('Datos en blanco');
+            mostrarAlerta('Todos los campos son obligatorios');
         }
 
             console.log('Datos completos');
