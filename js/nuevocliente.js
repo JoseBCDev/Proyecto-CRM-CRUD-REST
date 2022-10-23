@@ -1,5 +1,5 @@
 import { mostrarAlerta } from "./funciones.js";
-
+import {nuevoCliente} from "./API.js";
 //Funcion ifi (permite que se mantengan las variables y funciones)
 (function(){
    
@@ -32,8 +32,8 @@ import { mostrarAlerta } from "./funciones.js";
         {
             mostrarAlerta('Todos los campos son obligatorios');
         }
-
-            console.log('Datos completos');
+            //Peticion al servidor, para registrar nuevos clientes
+            nuevoCliente(cliente);
     }
 
     function validarCampos(objeto)
