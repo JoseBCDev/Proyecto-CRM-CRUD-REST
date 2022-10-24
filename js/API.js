@@ -31,3 +31,14 @@ export const obtenerClientes = async()=>{
         console.log(error);
     }
 }
+
+//PETICION AL SERVIDOR - ELIMINAR CLIENTE
+export const eliminarCliente = async (id)=>{
+    try {
+        fetch(`${url}/${id}`,{
+            method: 'DELETE',
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}

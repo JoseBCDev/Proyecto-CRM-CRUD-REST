@@ -1,12 +1,14 @@
-import { obtenerClientes } from "./API.js";
+import { obtenerClientes,eliminarCliente } from "./API.js";
 
 //Funcion IFI
 (function(){
-
+    //Variables
     const listado = document.querySelector('#listado-clientes');
-
+    
+    //Eventos
     document.addEventListener('DOMContentLoaded',mostrarClientes);
 
+    listado.addEventListener('click',confirmarEliminar);
 
 //Funciones
 
@@ -40,5 +42,20 @@ async function mostrarClientes()
     });
 }
 
+
+function confirmarEliminar(e)
+{
+    if(e.target.classList.contains('eliminar'))
+    {
+        const confirmar = confirm('Seguro que desea Eliminar?');
+
+        if(confirmar)
+        {
+            const id = parseInt(e.target.dataset.cliente);
+            eliminarCliente(id);
+        }
+    }
+
+}
 
 })();
