@@ -6,6 +6,13 @@
       "telefono": "933833096",
       "empresa": "Universidad Nacional Federico Villarreal - UNFV",
       "id": 1
+    },
+    {
+      "nombre": "Mario",
+      "email": "mario@correo.com",
+      "telefono": "5687854",
+      "empresa": "Ibiza",
+      "id": 2
     }
   ]
 }
