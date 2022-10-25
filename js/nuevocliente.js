@@ -1,4 +1,4 @@
-import { mostrarAlerta } from "./funciones.js";
+import { mostrarAlerta,validarCampos } from "./funciones.js";
 import {nuevoCliente} from "./API.js";
 //Funcion ifi (permite que se mantengan las variables y funciones)
 (function(){
@@ -31,13 +31,10 @@ import {nuevoCliente} from "./API.js";
         if(!validarCampos(cliente))
         {
             mostrarAlerta('Todos los campos son obligatorios');
+            return;
         }
-            //Peticion al servidor, para registrar nuevos clientes
+        //Peticion al servidor, para registrar nuevos clientes
             nuevoCliente(cliente);
     }
 
-    function validarCampos(objeto)
-    {//Every solo Retorna TRUE OR FALSE, iteramos en el objeto
-        return Object.values(objeto).every(value => value !=='' )
-    }
 })();

@@ -1,7 +1,11 @@
-import { obtenerUnCliente } from "./API.js";
+import { obtenerUnCliente,editarCliente } from "./API.js";
+import { mostrarAlerta,validarCampos } from "./funciones.js";
+
 (function(){
 
 //Variables
+
+    const formulario = document.querySelector('#formulario');
 
     const nombreInput = document.querySelector('#nombre');
     const emailInput = document.querySelector('#email');
@@ -20,6 +24,8 @@ import { obtenerUnCliente } from "./API.js";
         mostrarCliente(cliente);
     });
 
+    formulario.addEventListener('submit',validarFormulario);
+
 //Funciones
 
 function mostrarCliente(cliente)
@@ -33,5 +39,26 @@ function mostrarCliente(cliente)
     idInput.value = id;
 }
 
+function validarFormulario(e)
+{
+    e.preventDefault();
 
+    //Creamos objeto pasandole los datos del input
+        const OBJcliente ={
+            nombre:nombreInput.value,
+            email:emailInput.value,
+            telefono:telefonoInput.value,
+            empresa:empresaInput.value,
+            id:parseInt(idInput.value)
+        }
+        //Validamos si estan vacios o no los inputs
+
+        if(!validarCampos(OBJcliente))
+        {
+            mostrarAlerta('Todos los campos son obligatorios');
+            return;
+        } 
+
+        editarCliente(OBJcliente);
+}
 })();

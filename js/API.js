@@ -55,3 +55,20 @@ export const obtenerUnCliente = async(idCliente)=>{
         console.log(error);
     }
 }
+
+//PETICION AL SERVIDOR - EDITAR UN CLIENTE
+export const editarCliente = (Cliente)=>{
+    
+    try {
+        fetch(`${url}/${Cliente.id}`,{
+            method: 'PUT',
+            body: JSON.stringify(Cliente),
+            headers: {
+                'Content-Type':'application/json'
+            }
+        });
+        window.location.href = 'index.html';
+    } catch (error) {
+        console.log(error);
+    }
+}

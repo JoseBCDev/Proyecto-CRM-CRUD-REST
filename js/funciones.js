@@ -20,3 +20,9 @@ export function mostrarAlerta(mensaje)
         }, 3000);
     }
 }
+
+
+export function validarCampos(objeto)
+{//Every solo Retorna TRUE OR FALSE, iteramos en el objeto
+    return Object.values(objeto).every(value => value !=='' )
+}
