@@ -42,3 +42,16 @@ export const eliminarCliente = async (id)=>{
         console.log(error);
     }
 }
+
+//PETICION AL SERVIDOR - OBTENER UN CLIENTE
+export const obtenerUnCliente = async(idCliente)=>{
+
+    try {
+        const resultado = await fetch(`${url}/${idCliente}`);
+        const cliente = await resultado.json();
+
+        return cliente;
+    } catch (error) {
+        console.log(error);
+    }
+}

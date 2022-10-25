@@ -48,9 +48,9 @@ function confirmarEliminar(e)
     if(e.target.classList.contains('eliminar'))
     {
         const confirmar = confirm('Seguro que desea Eliminar?');
-
+        //Si confirma eliminar, ingresa al IF
         if(confirmar)
-        {
+        {   //Transformacion del ID en Entero
             const id = parseInt(e.target.dataset.cliente);
             eliminarCliente(id);
         }
